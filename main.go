@@ -1,6 +1,7 @@
 package main
 import(
 	"log"
+	"time"
 	"encoding/base64"
 	"io/ioutil"
 	"github.com/chelion/catface/unipal"
@@ -20,8 +21,11 @@ func main(){
 	}
 	imageBase64Data0 := base64.StdEncoding.EncodeToString(imageData0)
 	if "" != imageBase64Data0{
+		t1 := time.Now()
 		info,err := catface.DetectCatFace(imageBase64Data0)
 		if nil == err{
+			elapsed := time.Since(t1)
+			log.Println("Detect elapsed: ", elapsed)
 			log.Println(info)
 		}
 	}
@@ -33,8 +37,11 @@ func main(){
 	}
 	imageBase64Data1 := base64.StdEncoding.EncodeToString(imageData1)
 	if "" != imageBase64Data1{
+		t1 := time.Now()
 		info,err := catface.DetectCatFace(imageBase64Data1)
 		if nil == err{
+			elapsed := time.Since(t1)
+			log.Println("Detect elapsed: ", elapsed)
 			log.Println(info)
 		}
 	}

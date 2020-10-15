@@ -10,7 +10,7 @@ import(
 )
 const(
 	TOKEN_URL = "https://aip.baidubce.com/oauth/2.0/token"
-	THRESHOLD = 0.9
+	THRESHOLD = 0.1
 )
 
 type CatFace struct{
